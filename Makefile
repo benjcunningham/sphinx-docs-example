@@ -17,6 +17,7 @@ github:
 	@make html
 	@git fetch origin gh-pages
 	@git checkout gh-pages
+	@rm -rf ./docs/*
 	@mv ./build/html/* ./docs/
 	@rm -rf ./build
 	@git add ./docs
