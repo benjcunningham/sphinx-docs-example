@@ -17,14 +17,14 @@ github:
 	@make html
 	@git fetch origin gh-pages
 	@git checkout gh-pages
-	@find docs | grep -Ev "^docs/source|^docs/.nojekyll" | xargs rm -rf
+	@find docs/* | grep -Ev "^docs/source|^docs/.nojekyll" | xargs rm -rf
 	@mv ./build/html/* ./docs/
 	@rm -rf ./build
 	@git add ./docs
 
 clean:
 	@rm -rf ./build
-	@find docs | grep -Ev "^docs/source|^docs/.nojekyll" | xargs rm -rf
+	@find docs/* | grep -Ev "^docs/source|^docs/.nojekyll" | xargs rm -rf
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
