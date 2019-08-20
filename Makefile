@@ -17,6 +17,7 @@ github:
 	@make html
 	@git fetch origin gh-pages
 	@git checkout gh-pages
+	@find docs | grep -Ev "^docs/source|^docs/.nojekyll" | xargs rm -rf
 	@mv ./build/html/* ./docs/
 	@rm -rf ./build
 	@git add ./docs
